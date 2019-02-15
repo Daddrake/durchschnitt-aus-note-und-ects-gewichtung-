@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int ectsSum = 0;
+    float sum = 0;
+    float ds = 0;
+    int size = 0;
+    cout << "Anzahl Faecher: ";
+    cin >> size;
+    float noten[size]; 
+    float ects[size];
+    for( int i = 0; i < size ; i++){
+        cout << "Note " << i+1 << ": " ;
+        cin >> noten[i];
+    }
+    for( int i = 0; i < size ; i++){
+        cout << "Gewichtung/ECTS " << i+1 << ": " ;
+        cin >> ects[i];
+        sum += noten[i] * ects[i];
+    } 
+    for (int i = 0; i < size; i++) {
+        ectsSum += ects[i];
+    }
+    ds = sum / ectsSum;
+    cout << "Durchschnitt: " << ds;
+    return 0;
+}
